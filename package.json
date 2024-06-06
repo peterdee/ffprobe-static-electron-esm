@@ -1,24 +1,11 @@
 {
-  "name": "ffprobe-static-electron",
-  "version": "2.0.2",
-  "description": "Static binaries for ffprobe.",
+  "name": "ffprobe-static-electron-esm",
+  "version": "2.0.3",
+  "description": "ffprobe static binaries for Mac, Linux and Windows",
   "main": "index.js",
-  "scripts": {
-    "test": "tape tests/*",
-    "publish:public": "npm publish  --access public",
-    "publish:dry:run": "npm publish --dry-run"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pietrop/ffprobe-static-electron.git"
+    "url": "https://github.com/peterdee/ffprobe-static-electron-esm"
   },
-  "keywords": [
-    "ffprobe",
-    "ffmpeg"
-  ],
-  "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "tape": "^4.0.1"
-  }
+  "license": "MIT"
 }
