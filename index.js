@@ -23,8 +23,10 @@ if (platform === 'mac' && (arch !== 'x64' &&  arch !== 'arm64' )) {
 }
 
 // fix __dirname for ESM
-let dirnamePath = __dirname;
-if (!dirnamePath) {
+let dirnamePath;
+try {
+  dirnamePath = __dirname;
+} catch {
   dirnamePath = path.dirname(url.fileURLToPath(import.meta.url));
 }
 
