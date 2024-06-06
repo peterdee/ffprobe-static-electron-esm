@@ -2,8 +2,6 @@ const os = require('node:os');
 const path = require('node:path');
 const url = require('node:url');
 
-const unsupportedPlatformError = new Error(`Unsupported platform: ${platform}`);
-
 let platform = os.platform();
 if (platform == 'darwin') {
 	platform = 'mac';
@@ -11,6 +9,8 @@ if (platform == 'darwin') {
 if (platform == 'win32') {
 	platform = 'win';
 }
+
+const unsupportedPlatformError = new Error(`Unsupported platform: ${platform}`);
 
 if (platform !== 'linux' && platform !== 'mac'
   && platform !== 'win' && platform !== 'browser') {
