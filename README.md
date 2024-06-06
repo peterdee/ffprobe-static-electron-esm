@@ -18,7 +18,13 @@ npm i github:peterdee/ffprobe-static-electron-esm
 
 ```javascript
 import ffprobePath from 'ffprobe-static-electron-esm';
-console.log(ffprobePath.path);
+console.log(ffprobePath);
+```
+
+### Testing
+
+```shell script
+npm run test
 ```
 
 ### License

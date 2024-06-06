@@ -1,6 +1,6 @@
-const os = require('node:os');
-const path = require('node:path');
-const url = require('node:url');
+import os from 'node:os';
+import path from 'node:path';
+import url from 'node:url';
 
 let platform = os.platform();
 if (platform == 'darwin') {
@@ -22,16 +22,8 @@ if (platform === 'mac' && (arch !== 'x64' &&  arch !== 'arm64' )) {
   throw unsupportedPlatformError;
 }
 
-// fix __dirname for ESM
-let dirnamePath;
-try {
-  dirnamePath = __dirname;
-} catch {
-  dirnamePath = path.dirname(url.fileURLToPath(import.meta.url));
-}
-
-var ffprobePath = path.join(
-  dirnamePath,
+export default path.join(
+  path.dirname(url.fileURLToPath(import.meta.url)),
   'bin',
   platform,
   arch,
@@ -39,5 +31,3 @@ var ffprobePath = path.join(
     ? 'ffprobe.exe'
     : 'ffprobe',
 );
-
-exports.path = ffprobePath;
